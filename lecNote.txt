@@ -1,0 +1,13 @@
+Laravel ==> php framework==> list of backages ==> list of files
+===> full stack frame work ==> api
+
+
+// design pattern ==> solution of problem in software (https://refactoring.guru/)
+===> sigle tone design pattern
+===> MVC  ==> Model View Controller
+
+
+
+==============>source ==> documentation of laravel==>
+
+to use laravel you need to install composer (php dependancy manager ==>https://getcomposer.org/download/)
