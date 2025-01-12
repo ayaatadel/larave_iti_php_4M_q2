@@ -11,3 +11,14 @@ Laravel ==> php framework==> list of backages ==> list of files
 ==============>source ==> documentation of laravel==>
 
 to use laravel you need to install composer (php dependancy manager ==>https://getcomposer.org/download/)
+
+
+====================> install repo from github and use install
+git clone https://github.com/ayaatadel/larave_iti_php_4M_q2.git
+cd demo
+composer install
+cp .env.example .env
+php artisan key:generate
+
+===============> run project 
+php artisan serve
