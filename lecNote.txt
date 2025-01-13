@@ -22,3 +22,34 @@ php artisan key:generate
 
 ===============> run project 
 php artisan serve
+
+
+
+=================> Database ==> DDL==> data definition language   ==> create , alter 
+====> , DML===> Data manbulation language  => insert , update , delete (Cruds)
+
+
+
+===> Model ====> Migration (يهاجر)   ====> Sql
+===> connection with Database  ==> set Craditionals ==>  dbtype ,dbName , host , userName ,password
+
+
+ migrate    ==> insert all migration in database
+  migrate:fresh             Drop all tables and re-run all migrations
+  migrate:install           Create the migration repository
+  migrate:refresh           Reset and re-run all migrations
+  migrate:reset             Rollback all database migrations
+  migrate:rollback          Rollback the last database migration
+  migrate:status            Show the status of each migration
+
+
+===> update on column
+  // php artisan make:migration alter_name_to_students_table
+
+
+  // git hub ==> repo ==>create new project 
+
+  ==> students   ==> as I do
+  ==> taracks ==> name , description , image
+
+  ===> handle delete in two tables

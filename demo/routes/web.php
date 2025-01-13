@@ -1,39 +1,45 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/users',function(){
-// return "ayaat";
-$users=[
-    ["id"=>1,"name"=>"ayaat","age"=>24],
-    ["id"=>2,"name"=>"nada","age"=>25],
-    ["id"=>3,"name"=>"eman","age"=>23],
-];
-// return $users;
-            // name of view  ==> data
-                         // key==> variable
-return view('usersData',["users"=>$users]);
+Route::get('/users', function () {
+    // return "ayaat";
+    $users = [
+        ["id" => 1, "name" => "ayaat", "age" => 24],
+        ["id" => 2, "name" => "nada", "age" => 25],
+        ["id" => 3, "name" => "eman", "age" => 23],
+    ];
+    // return $users;
+    // name of view  ==> data
+    // key==> variable
+    return view('usersData', ["users" => $users]);
 });
-Route::get('/users/{id}',function($id){
-// return "ayaat";
-$users=[
-    ["id"=>1,"name"=>"ayaat","age"=>24],
-    ["id"=>2,"name"=>"nada","age"=>25],
-    ["id"=>3,"name"=>"eman","age"=>23],
-];
-if($id<count($users))
-{
+Route::get('/users/{id}', function ($id) {
+    // return "ayaat";
+    $users = [
+        ["id" => 1, "name" => "ayaat", "age" => 24],
+        ["id" => 2, "name" => "nada", "age" => 25],
+        ["id" => 3, "name" => "eman", "age" => 23],
+    ];
+    if ($id < count($users)) {
 
-    return $users[$id];
-}else{
-    // return "Not Found";
-    return abort(404);
-}
-})->where('id','[0-9]+');
+        return $users[$id];
+    } else {
+        // return "Not Found";
+        return abort(404);
+    }
+})->where('id', '[0-9]+');
+
+
+Route::get('/students',[StudentController::class,'index'])->name('Studentsindex');
+
+Route::get('/students/{id}',[StudentController::class,'view'])->name('studentsView');
 
 /***
  * get ==> get data
