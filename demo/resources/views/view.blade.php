@@ -32,8 +32,9 @@
                 <td>{{ $student->email }}</td>
                 <td>{{ $student->gender }}</td>
                 <td><img src="{{ $student->image }}" alt="studentImage" srcset=""></td>
-                <td><a href={{ route('studentsView', $student->id) }}><button class="btn btn-warning">View</button></a>
-                <a href={{ route('Studentsindex') }}><button class="btn btn-Info">Back</button></a></td>
+                <td>
+                    {{-- <a href={{ route('students.view', $student->id) }}><button class="btn btn-warning">View</button></a> --}}
+                <a href={{ route('students.index') }}><button class="btn btn-Info">Back</button></a></td>
             </tr>
 
 
