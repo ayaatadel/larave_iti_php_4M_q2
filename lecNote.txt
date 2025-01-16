@@ -117,7 +117,7 @@ tions:
       --api             Indicates if the generated controller should be an API resource controller    
   -R, --requests        Create new form request classes and use 
 
-  =======================================>
+  =======================================>  tasks day 4
   ===> handle code edit , update (image)==> destroy
   ==> coursers (name , description , logo) ==> cruds 
   ===========> search ==> component in laravel(buttons)
