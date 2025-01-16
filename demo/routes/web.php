@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TrackController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -54,6 +55,25 @@ Route::get('/students/{id}/edit',[StudentController::class,'edit'])->name('stude
 
 // update on student data
 Route::put('/students/{id}/update',[StudentController::class,'update'])->name('students.update');
+
+// Route resource ==> handle all routes
+// list all route ===> php artisan route:list
+
+Route::resource('tracks', TrackController::class);
+/*   method          url                   route name      method in controller
+ *  GET|HEAD        tracks ............... tracks.index › TrackController@index
+  POST            tracks ............... tracks.store › TrackController@store
+  GET|HEAD        tracks/create ...... tracks.create › TrackController@create
+  GET|HEAD        tracks/{track} ......... tracks.show › TrackController@show
+  PUT|PATCH       tracks/{track} ..... tracks.update › TrackController@update
+  DELETE          tracks/{track} ... tracks.destroy › TrackController@destroy
+  GET|HEAD        tracks/{track}/edit .... tracks.edit › TrackController@edit
+  GET|HEAD        up ........................................................
+
+
+ */
+
+
 
 /***
  * get ==> get data

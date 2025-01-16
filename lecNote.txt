@@ -47,9 +47,77 @@ php artisan serve
   // php artisan make:migration alter_name_to_students_table
 
 
+  /// task day1 
+  return view of single user with handle button of view
+
+// task day2
   // git hub ==> repo ==>create new project 
 
   ==> students   ==> as I do
   ==> taracks ==> name , description , image
 
   ===> handle delete in two tables
+
+
+
+// task day3 
+Handle all cruds for table student and table taracks
+in form update ==> show old data of student
+
+=======================  Day4     =========================
+-- Controller resource  ==> handle cruds
+-- Route resource
+-- seeder , factory
+-- pagination
+
+==> command to generate all files
+
+====================================>
+Controller resource==>handle all methods ==> write structure of function
+php artisan make:controller TrackController --resource
+
+==> model 
+php artisan make:model Track
+=====>connect between model and Controller while create controller
+ php artisan make:controller TrackController --model=Track --resource
+ ==> table ==> migration
+ php artisan make:migration create_tracks_table
+
+
+ ===> fake data 
+ ===> seeder (store data) , factory ==> make date 
+ == seeder
+ https://laravel.com/docs/11.x/seeding#running-seeders
+ ==>factory
+ https://laravel.com/docs/10.x/eloquent-factories
+
+ ==> create factrory ==> php artisan make:factory TrackFactory  => structure
+ ==> store data ==> create seeder =>php artisan make:seeder TrackSeeder
+
+ ==> fake data https://github.com/fzaninotto/Faker
+
+ ==> command generate mode , migration , seeder , factory , controller using resource
+
+php artisan make:model --help
+==>php artisan make:model Course -mfscr
+==>php artisan make:model Course --all
+
+
+tions:
+  -a, --all             Generate a migration, seeder, factory, policy, resource controller, and form request classes for the model
+  -c, --controller      Create a new controller for the model
+  -f, --factory         Create a new factory for the model
+      --force           Create the class even if the model already exists
+  -m, --migration       Create a new migration file for the model
+      --morph-pivot     Indicates if the generated model should be a custom polymorphic intermediate table model
+      --policy          Create a new policy for the model
+  -s, --seed            Create a new seeder for the model
+  -p, --pivot           Indicates if the generated model should be a custom intermediate table model  
+  -r, --resource        Indicates if the generated controller should be a resource controller
+      --api             Indicates if the generated controller should be an API resource controller    
+  -R, --requests        Create new form request classes and use 
+
+  =======================================>
+  ===> handle code edit , update (image)==> destroy
+  ==> coursers (name , description , logo) ==> cruds 
+  ===========> search ==> component in laravel(buttons)
