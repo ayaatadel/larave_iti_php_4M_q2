@@ -56,7 +56,7 @@ class TrackController extends Controller
     public function show(Track $track)//$track ==>id  , Track $track ==> object track
     {
         //
-        // dump($track);
+        // dump($track);  // after relation ==> array[students]==> students
         return view('tracks.show',compact('track'));
 
     }

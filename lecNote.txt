@@ -121,3 +121,56 @@ tions:
   ===> handle code edit , update (image)==> destroy
   ==> coursers (name , description , logo) ==> cruds 
   ===========> search ==> component in laravel(buttons)
+
+
+
+  ====================> Day 5 
+===> component   => resuse code  ==> generate component ==>
+php artisan make:component ButtonComponent
+==> relation between tables
+
+  generate component===>
+https://laravel.com/docs/11.x/blade#components
+  php artisan make:component ButtonComponent
+php artisan make:migration add_track_id_to_students_table
+php artisan make:migration create_course_student_table
+
+// relations
+==> two tables 
+==> one to one  
+===> one to many
+==> many to many
+===> DB==> migration , model ==>
+
+==> tracks , students (one to many)
+==> track can have many students
+==> student only join in one track
+
+ (track_id ==> in table students)
+ ==> migration
+ php artisan make:migration add_track_id_to_students_table 
+
+
+
+ ===================> reation ==> foreign key
+ =====================> track_id  ==> data of track
+ =====> realation ==> one ==> track in  student table
+ =====> function track()
+ {
+  return $this->belongsTo(Track::class);
+ }
+
+
+
+==>display all students in track 
+==> relation ==> track ==> 
+function students()
+{
+  return $this->hasMany(Student::class);
+} 
+
+
+
+======================== tasks 
+component ==> bootstrap ==> cdn ==> use
+===> courses ==> student ==> track

@@ -13,6 +13,7 @@
 <body>
     {{-- @dd($student); --}}
     <h1 class="text-success mx-5 my-3">Update Student Data</h1>
+  {{-- <x-button-component class="success" name="Back"></x-button-component> --}}
 
     <form method="Post" action="{{ route('students.update',$student->id) }}" class="w-75 border m-auto p-3">
         @csrf
@@ -54,6 +55,7 @@
     </label>
   </div>
         <button type="submit" class="btn btn-primary">Submit</button>
+
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

@@ -12,7 +12,7 @@
 
 <body>
     <h1 class="text-success mx-5 my-3">Create New Student</h1>
-
+{{-- @dump($tracks) --}}
     <form method="Post" action="{{ route('students.store') }}" class="w-75 border m-auto p-3">
         @csrf
         {{-- name --}}
@@ -36,9 +36,9 @@
         </div>
 {{-- gender --}}
 <div class="form-check">
-    <label class="form-controller d-block" for="gender">
-       Gender
-      </label>
+<label class="form-controller d-block" for="gender">
+    Gender
+    </label>
     <input  class="form-check-input" type="radio" name="gender" id="gender1" value="male">
     <label class="form-check-label" for="gender1">
       male
@@ -49,6 +49,27 @@
     <label class="form-check-label" for="gender2">
       female
     </label>
+
+
+
+
+    {{-- {{ choose student track }} --}}
+    <div class="m-3">
+    <label for="trackStudent">Track Student</label>
+    <select class="form-select" id="Track Student" aria-label="Default select example" name="track_id">
+        <option selected disabled value="">choose Student track</option>
+        @foreach ($tracks as $track )
+        {{-- @dd($track) --}}
+        <option value="{{ $track->id }}">{{ $track->name }}</option>
+        @endforeach
+
+
+
+
+      </select>
+    </div>
+
+
   </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

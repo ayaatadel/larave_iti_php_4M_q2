@@ -15,7 +15,15 @@
     <h1 class="text-info">
         All Students Data
     </h1>
-    <a href="{{ route('students.create') }}"><button class="btn btn-info">Create Student</button></a>
+    <a href="{{ route('students.create') }}">
+        {{-- <button class="btn btn-info">Create Student</button> --}}
+        <x-button-component class="info" name="Create Student"></x-button-component>
+
+    </a>
+    <a href="{{url()->previous()}}" class="mx-2">
+        <x-button-component class="success" name="Back"></x-button-component>
+
+    </a>
 </div>
 
     <table class="table table-bordered w-75 m-auto">
@@ -44,8 +52,9 @@
                         class="btn btn-danger">Delete</button>
                   </form>
                 <a href="{{route('students.edit',$student->id)  }}">
-                    <button
-                    class="btn btn-Success">Update</button>
+                    {{-- <button
+                    class="btn btn-Success">Update</button> --}}
+                    <x-button-component class="Success" name="Update"> </x-button-component>
                 </a>
                 </td>
             </tr>
@@ -54,6 +63,10 @@
 
         </tbody>
     </table>
+    <div style="margin:10px;" class="d-flex justify-content-center">
+        {{ $students->links() }}
+
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>

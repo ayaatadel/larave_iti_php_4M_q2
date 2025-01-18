@@ -11,7 +11,8 @@
 
 <body>
     {{-- @dump($student) --}}
-
+    {{-- @dd($track->students)   array --}}
+    <h1 class="text-success m-2">All Tracks</h1>
     <table class="table table-bordered w-75 m-auto">
         <thead>
             <tr>
@@ -45,6 +46,39 @@
 
         </tbody>
     </table>
+@if(count($track->students)>0)
+<h1 class="text-success m-2">All Track Students</h1>
+{{-- Track Students --}}
+<table class="table table-bordered w-75 m-auto">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @foreach ($track->students as $student )
+        <tr>
+            <td>{{ $student->id }}</td>
+            <td>{{ $student->name }}</td>
+
+            <td>
+                <a href={{ route('tracks.index') }}><button class="btn btn-Info">Back</button></a>
+            </td>
+        </tr>
+
+        @endforeach
+
+
+
+    </tbody>
+</table>
+@endif
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>

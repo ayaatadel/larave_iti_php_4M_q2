@@ -15,7 +15,14 @@
     <h1 class="text-info">
         All Tracks Data
     </h1>
-    <a href="{{ route('tracks.create') }}"><button class="btn btn-info">Create Track</button></a>
+    <a href="{{ route('tracks.create') }}">
+        {{-- <button class="btn btn-info">Create Track</button> --}}
+    <x-button-component class="info" name="Create Track"> </x-button-component>
+    </a>
+    <a href="{{url()->previous()}}" class="mx-2">
+        <x-button-component class="success" name="Back"></x-button-component>
+
+    </a>
 </div>
 
     <table class="table table-bordered w-75 m-auto">

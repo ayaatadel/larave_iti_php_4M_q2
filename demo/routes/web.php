@@ -5,9 +5,9 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TrackController;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 // Route::get('/users', function () {
 //     // return "ayaat";

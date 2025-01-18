@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
+use App\Models\Track;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,7 +17,9 @@ class StudentController extends Controller
         // dump($students);
 
         // model  => name of table (جمع) name model (مفرد)
-        $students = Student::all();
+        // $students = Student::paginate(5);
+        $students=Student::orderBy('created_at',"desc")-> paginate(3);
+
         return view('students', ["students" => $students]);
     }
 
@@ -26,6 +29,7 @@ class StudentController extends Controller
         // findOrFail  ==> check id ==> found(return)  ==> notFount =>(404)
         $student = Student::findOrFail($id);
         // ["student"=>student]
+        // dd($student);
         return view('view', compact('student'));
     }
 
@@ -41,7 +45,8 @@ class StudentController extends Controller
     // from ===> select all data ==> strore
     function create()
     {
-        return view('create');
+        $tracks=Track::all();
+        return view('create',compact('tracks'));
     }
 
     function store()
@@ -53,14 +58,15 @@ class StudentController extends Controller
         // dump($_POST);
         // dump(request());
         $requestData = request()->all();
-        // dump($requestData);
+        // dd($requestData);
         //==> model ==>class
-        $student = new Student();
-        $student->name = $requestData['name'];
-        $student->email = $requestData['email'];
-        $student->image = $requestData['image'];
-        $student->gender = $requestData['gender'];
-        $student->save();
+        // $student = new Student();
+        // $student->name = $requestData['name'];
+        // $student->email = $requestData['email'];
+        // $student->image = $requestData['image'];
+        // $student->gender = $requestData['gender'];
+        Student::create($requestData);
+        // $student->save();
         return to_route('students.index');
     }
 
